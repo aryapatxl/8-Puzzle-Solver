@@ -1,0 +1,111 @@
+
+
+# name: Arya Patel
+# email: aryaxrp@bu.edu
+#
+# If you worked with a partner, put their contact info below:
+# partner's name: Shruti Gajjar
+# partner's email: shrutiga@bu.edu
+
+
+Table 1:
+puzzles with 5-move optimal solutions
+-----------------------------------------------------------------------------------------
+algorithm                		num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------------------------
+random					10		6.0			439.1
+BFS					10		5.0			47.1
+DFS (depth limit 20)			10		16.2			19072.7
+DFS (depth limit 50)			10		48.2			49043.0
+Greedy Search (using h1)		10		5.4			70.3
+A* (using h1)				10		5.0			6.5
+
+
+Table 2:
+puzzles with 10-move optimal solutions
+------------------------------------------------------------------------------------------
+algorithm                		num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------------------------
+random					10		11.6			6680.5
+BFS					10		10.0			747.4
+DFS (depth limit 20)			10		18.8			24858.0
+DFS (depth limit 50)			10		49.2			92287.3
+Greedy Search (using h1)		10		76.0			325.625
+A* (using h1)				10		10.0			27.3
+
+
+Table 3:
+puzzles with 15-move optimal solutions
+---------------------------------------------------------------------------------
+algorithm                		num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------------------
+random					5		17.0			17636.0
+BFS					10		15.0			12672.0
+DFS (depth limit 20)			10		17.8			68659.0
+DFS (depth limit 50)			10		48.6			111406.0
+Greedy Search (using h1)		6		90.333			2718.0
+A* (using h1)				10		15.0			313.8
+
+
+Reflection:
+The best algorithm that gives the most optimal solution for average number of moves is always A*. This is because A* is a more intelligent algorithm that is able to look at the h1 function and analyze the number of misplaced tiles, looks at priority, but also looks at the number of moves as a cost variable/analysis for the state. This makes it easier for A* to do the minimum average states tested to attain the lowest average moves required. Random is the least informed algorithm because there is no coding mechanism by which it tests states. For BFS, it is more optimal than DFS in terms of the number of average moves required to get to the goal state. DFS usually took the longest amount of time to get the results, and this is because DFS follows through one branch of states and tests all the states in a branch until the depth limit, which takes a longer time than the other algorithms. Greedy search is one of the more informed algorithms as well, but it does not take into account the cost analysis that A* does and only looks at heuristic and priority, and therefore it is a little bit less optimal in results, but still a very efficient algorithm and probably the second best/optimal algorithm.
+
+
+
+
+heuristic h2
+------------
+This heuristic function is an alternative heuristic function that looks at if a digit is in the wrong row or wrong column for its estimate. If the digit is in the wrong row or the wrong column, then 1 point is added for the state estimation. If both the row and column is wrong for the digit, then 2 points are added for state estimation. This allows for a more accurate heuristic estimation without the problem of overestimating.
+
+Table 1:
+puzzles with 18-move optimal solutions
+------------------------------------------------------------------------------------
+algorithm              		num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------------------
+Greedy (heuristic h1)		 7			133.71			4594.0
+Greedy (heuristic h2)		10			74.8			254.2
+
+A* (heuristic h1)		10			18.0			1602.0
+A* (heuristic h2)		10			18.0			510.9
+
+
+Table 2:
+puzzles with 21-move optimal solutions
+------------------------------------------------------------------------------------
+algorithm              		num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------------------
+Greedy (heuristic h1)		 5			104.6			4172.6						
+Greedy (heuristic h2)		10			83.4			397.7
+
+A* (heuristic h1)		10			21.0			6301.7							
+A* (heuristic h2)		10			21.0			1499.6						
+
+
+Table 3:
+puzzles with 24-move optimal solutions
+------------------------------------------------------------------------------------
+algorithm              		num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------------------
+Greedy (heuristic h1)		 6			123.67		2856.17						
+Greedy (heuristic h2)		10			114.0		400.4						
+
+A* (heuristic h1)		 6			24.0		24368.8333						
+A* (heuristic h2)		10			24.0		5303.0						
+
+
+Table 4:
+puzzles with 27-move optimal solutions
+------------------------------------------------------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------------------
+Greedy (heuristic h1)		 4			197.5		     4285.5									
+Greedy (heuristic h2)		10			117.0		     402.5						
+
+A* (heuristic h1)		0 (no solution)					
+A* (heuristic h2)		6			27.0		     25795.833
+
+
+Reflection: 
+As mentioned above, A* is a more informed search algorithm than Greedy, and often took less time for the tests to run. Our heuristic 2 function (h2) worked better than the h1 heuristic function because our h2 function assigned state estimations more specifically with the rows/column analysis. It is evident that our h2 ran better because as the number of moves to get to the optimal solution increased from 18 to 21 to 24 to 27, the A*h2 test or the Greedy h2 test was the most optimal and closest to the least average number of moves to get to the goal state as possible.
+
+							
